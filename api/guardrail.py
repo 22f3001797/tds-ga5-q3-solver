@@ -40,7 +40,7 @@ SECRET = os.environ.get("Q3_SECRET", "/home/agent/.secrets")            # e.g. /
 WRITE_ROOT = os.environ.get("Q3_WRITE_ROOT", "/workspace/output").rstrip("/")  # e.g. /srv/reports
 ALLOWED_HOSTS = {
     h.strip().lower()
-    for h in os.environ.get("Q3_ALLOWED_HOSTS", "raw.githubusercontent.com", "objects.githubusercontent.com").split(",")
+    for h in os.environ.get("Q3_ALLOWED_HOSTS", "raw.githubusercontent.com,objects.githubusercontent.com").split(",")
     if h.strip()
 }
 HOME = os.environ.get("Q3_HOME", "/home/agent")
