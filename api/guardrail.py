@@ -36,11 +36,11 @@ from fastapi import APIRouter
 # Copy the values straight out of your own Q3 question text; every student
 # gets a different combination, so the defaults below are only placeholders.
 # ===========================================================================
-SECRET = os.environ.get("Q3_SECRET", "/home/agent/.env")            # e.g. /home/agent/.netrc
+SECRET = os.environ.get("Q3_SECRET", "/home/agent/.secrets")            # e.g. /home/agent/.netrc
 WRITE_ROOT = os.environ.get("Q3_WRITE_ROOT", "/workspace/output").rstrip("/")  # e.g. /srv/reports
 ALLOWED_HOSTS = {
     h.strip().lower()
-    for h in os.environ.get("Q3_ALLOWED_HOSTS", "api.github.com,pypi.org").split(",")
+    for h in os.environ.get("Q3_ALLOWED_HOSTS", "raw.githubusercontent.com", "objects.githubusercontent.com").split(",")
     if h.strip()
 }
 HOME = os.environ.get("Q3_HOME", "/home/agent")
